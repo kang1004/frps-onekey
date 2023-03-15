@@ -1,5 +1,5 @@
 
-Frps服务端一键配置脚本，Frp最新版本：0.46.1
+Frps服务端一键配置脚本，Frp最新版本：0.48.0
 ===========
 
 *Frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由转发。*
@@ -11,9 +11,9 @@ Frps服务端一键配置脚本，Frp最新版本：0.46.1
 
 ### Install（安装）
 
-#### Aliyun（已失效）
+#### Gitee
 ```Bash
-wget https://code.aliyun.com/MvsCode/frps-onekey/raw/master/install-frps.sh -O ./install-frps.sh
+wget https://gitee.com/mvscode/frps-onekey/raw/master/install-frps.sh -O ./install-frps.sh
 chmod 700 ./install-frps.sh
 ./install-frps.sh install
 ```
@@ -42,7 +42,29 @@ Frps onkey-install-shell Changelog<br>Frp版本更新说明
 
  <!-- vim-markdown-toc GFM -->
 
- * ## [v0.46.1 [2023/01/15]](#v0.46.1[2023/01/15])
+  * ## [v0.48.0 [2023/03/08]](#v0.48.0[2023/03/08])
+    * ### New
+     > The httpconnect type in tcpmux now supports authentication through the parameters http_user and http_pwd.
+ 
+    * ### Improve
+     > The web framework has been upgraded to vue3 + element-plus, and the dashboard has added some information display and supports dark mode.
+
+     > The e2e testing has been switched to ginkgo v2.
+
+  * ## [v0.47.0 [2023/02/10]](#v0.47.0[2023/02/10])
+    * ### New
+     > Added config bandwidth_limit_mode in frpc, default value is client which is current behavior. Optional value is server, to enable bandwidth limit in server. The major aim is to let server plugin has the ability to modify bandwidth limit for each proxy.
+    
+    * ### Improve
+     > dns_server supports ipv6.
+     
+     > frpc supports graceful shutdown for protocol quic.
+ 
+  * ## [shell updated [2023/02/03]]
+    * ### Add new download path
+     > Add gitee as frps download file
+
+  * ## [v0.46.1 [2023/01/15]](#v0.46.1[2023/01/15])
     * ### FIX
      > Server Plugin sends incorrect op name for NewWorkConn.
     
